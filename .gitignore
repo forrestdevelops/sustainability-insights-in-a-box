@@ -8,4 +8,4 @@ dist
 .log
 tests/cases
 .markdownlint.json
-.github/**
+.github
