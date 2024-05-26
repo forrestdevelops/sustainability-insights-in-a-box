@@ -1,0 +1,12 @@
+FROM apache/superset:latest
+
+USER root
+RUN pip install mysqlclient
+RUN apt update -y && apt install zip -y && apt install yq -y
+
+USER superset
+COPY superset-init.sh /superset-init.sh
+COPY superset_config.py /app/
+COPY --chown=superset dashboards/default_dashboards /tmp/default_dashboards
+ENV SUPERSET_CONFIG_PATH /app/superset_config.py
+ENTRYPOINT [ "/superset-init.sh" ]

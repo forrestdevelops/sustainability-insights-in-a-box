@@ -1,0 +1,9 @@
+venv
+dist
+.idea
+.vscode
+.python-version
+.DS_Store
+**/__pycache__/**
+.log
+tests/cases

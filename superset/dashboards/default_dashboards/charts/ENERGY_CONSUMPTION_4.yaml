@@ -1,0 +1,39 @@
+slice_name: ENERGY CONSUMPTION
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 2__table
+  viz_type: big_number_total
+  slice_id: 14
+  metric:
+    aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: true
+    label: daily totals
+    optionName: metric_2aa75spckmd_x9deagmii2f
+    sqlExpression: (SUM(power_in::DECIMAL))/1000
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: bucket
+  subheader: kWh
+  header_font_size: 0.4
+  subheader_font_size: 0.15
+  y_axis_format: ',d'
+  time_format: smart_date
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 2
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: 10628c54-cbc5-4a9c-8e41-21040a911148
+version: 1.0.0
+dataset_uuid: b63486cc-73f0-4f2d-ae0f-e9d29dbd9bfd

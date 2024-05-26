@@ -1,0 +1,502 @@
+dashboard_title: 3. Devices
+description: null
+css: ".subheader-line {\n    position: absolute;\n    right: 0;\n    bottom: 1rem;\n\
+  }\n\ndiv[data-test-viz-type=big_number_total] .header-line\n{\n    color:#00bceb\
+  \ !important;\n    font-size: 1.5rem !important;\n    line-height: inherit;\n  \
+  \  height: inherit !important;\n    font-weight: 600;\n}\ndiv[data-test-viz-type=big_number_total]\
+  \ .subheader-line {\n    line-height: 1rem;\n    font-size: .75rem !important;\n\
+  }\n.dashboard-grid a.css-1r97axf{\n    font-weight: 400;\n    font-size: .875rem;\n\
+  }\n.dashboard-grid a.css-1r97axf:hover{\n    font-size: .875rem !important;\n} \n\
+  .css-1f41l3g.dashboard-markdown .dashboard-component-chart-holder {\n   font-size:1.25rem;\n\
+  \   font-weight: 600;\n}"
+slug: null
+certified_by: ''
+certification_details: ''
+published: true
+uuid: 0c077aae-7790-46c1-9c32-079ad18b232f
+position:
+  CHART-explore-49-1:
+    children: []
+    id: CHART-explore-49-1
+    meta:
+      chartId: 37
+      height: 50
+      sliceName: ENERGY CONSUMPTION AND CO2eq EMISSIONS
+      uuid: 3a319c66-d42e-4a52-ad44-2d2c668b907c
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-Um337zPUHP
+    type: CHART
+  CHART-explore-50-1:
+    children: []
+    id: CHART-explore-50-1
+    meta:
+      chartId: 2
+      height: 51
+      sliceName: ENERGY CONSUMPTION BY DAY OF WEEK
+      uuid: d61b0672-97ac-49a8-96c2-622d7cd14132
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-U7ibvewh3h
+    type: CHART
+  CHART-explore-51-1:
+    children: []
+    id: CHART-explore-51-1
+    meta:
+      chartId: 35
+      height: 51
+      sliceName: ENERGY CONSUMPTION BY HOUR OF DAY
+      uuid: 683dd5b5-3c82-463d-9d74-4275a979b204
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-U7ibvewh3h
+    type: CHART
+  CHART-explore-52-1:
+    children: []
+    id: CHART-explore-52-1
+    meta:
+      chartId: 8
+      height: 51
+      sliceName: ENERGY CONSUMPTION DURING WORK HOURS
+      uuid: 8fe454a6-332b-495e-b3f6-8a1f48a7d65e
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-U7ibvewh3h
+    type: CHART
+  CHART-explore-53-1:
+    children: []
+    id: CHART-explore-53-1
+    meta:
+      chartId: 25
+      height: 15
+      sliceName: ENERGY CONSUMPTION
+      uuid: 0253592c-5d6e-458d-a858-ef453ccbcaac
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-Oh-VYOfSzQ
+    type: CHART
+  CHART-explore-54-1:
+    children: []
+    id: CHART-explore-54-1
+    meta:
+      chartId: 30
+      height: 15
+      sliceName: CO2eq EMISSIONS
+      uuid: f32ee84f-9d25-4316-85a2-7cde42728a0b
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-Oh-VYOfSzQ
+    type: CHART
+  CHART-explore-55-1:
+    children: []
+    id: CHART-explore-55-1
+    meta:
+      chartId: 18
+      height: 15
+      sliceName: TRAFFIC EFFICIENCY
+      uuid: 399f5dbd-8d1c-40e1-9a5d-d9cee606940c
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-Oh-VYOfSzQ
+    type: CHART
+  CHART-explore-56-1:
+    children: []
+    id: CHART-explore-56-1
+    meta:
+      chartId: 21
+      height: 15
+      sliceName: ENERGY CONSUMPTION
+      uuid: c49fe1db-df06-4e98-ba5a-e63c74a0d21c
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-4ZkHj_qzBl
+    type: CHART
+  CHART-explore-57-1:
+    children: []
+    id: CHART-explore-57-1
+    meta:
+      chartId: 1
+      height: 15
+      sliceName: CO2eq EMISSIONS
+      uuid: ccfd63ca-7b2a-4923-904a-4e93ab14db4c
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-4ZkHj_qzBl
+    type: CHART
+  CHART-explore-58-1:
+    children: []
+    id: CHART-explore-58-1
+    meta:
+      chartId: 26
+      height: 15
+      sliceName: TRAFFIC EFFICIENCY
+      uuid: 93dbab25-6e4e-4b4c-acc3-854d31ea03f5
+      width: 2
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-4ZkHj_qzBl
+    type: CHART
+  COLUMN-Um337zPUHP:
+    children:
+    - CHART-explore-49-1
+    id: COLUMN-Um337zPUHP
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    type: COLUMN
+  COLUMN-wbZuZ6roKB:
+    children:
+    - ROW-vbMEI6Uc4c
+    - ROW-Oh-VYOfSzQ
+    - ROW-XjBpJcHyHU
+    - ROW-4ZkHj_qzBl
+    id: COLUMN-wbZuZ6roKB
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    type: COLUMN
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-3WCcuvF6CI
+    - ROW-U7ibvewh3h
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: 3. Devices
+    type: HEADER
+  MARKDOWN-EaKftvVRVN:
+    children: []
+    id: MARKDOWN-EaKftvVRVN
+    meta:
+      code: Last 30 Days - Totals
+      height: 7
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-XjBpJcHyHU
+    type: MARKDOWN
+  MARKDOWN-_F79YDhNgs:
+    children: []
+    id: MARKDOWN-_F79YDhNgs
+    meta:
+      code: Last 24 Hours
+      height: 7
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    - ROW-vbMEI6Uc4c
+    type: MARKDOWN
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-3WCcuvF6CI:
+    children:
+    - COLUMN-wbZuZ6roKB
+    - COLUMN-Um337zPUHP
+    id: ROW-3WCcuvF6CI
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-4ZkHj_qzBl:
+    children:
+    - CHART-explore-56-1
+    - CHART-explore-57-1
+    - CHART-explore-58-1
+    id: ROW-4ZkHj_qzBl
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    type: ROW
+  ROW-Oh-VYOfSzQ:
+    children:
+    - CHART-explore-53-1
+    - CHART-explore-54-1
+    - CHART-explore-55-1
+    id: ROW-Oh-VYOfSzQ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    type: ROW
+  ROW-U7ibvewh3h:
+    children:
+    - CHART-explore-50-1
+    - CHART-explore-51-1
+    - CHART-explore-52-1
+    id: ROW-U7ibvewh3h
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-XjBpJcHyHU:
+    children:
+    - MARKDOWN-EaKftvVRVN
+    id: ROW-XjBpJcHyHU
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    type: ROW
+  ROW-vbMEI6Uc4c:
+    children:
+    - MARKDOWN-_F79YDhNgs
+    id: ROW-vbMEI6Uc4c
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3WCcuvF6CI
+    - COLUMN-wbZuZ6roKB
+    type: ROW
+metadata:
+  chart_configuration:
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 8
+        - 18
+        - 21
+        - 25
+        - 26
+        - 30
+        - 35
+        - 37
+    '8':
+      id: 8
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 18
+        - 21
+        - 25
+        - 26
+        - 30
+        - 35
+        - 37
+    '35':
+      id: 35
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 8
+        - 18
+        - 21
+        - 25
+        - 26
+        - 30
+        - 37
+    '37':
+      id: 37
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 8
+        - 18
+        - 21
+        - 25
+        - 26
+        - 30
+        - 35
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 8
+    - 18
+    - 21
+    - 25
+    - 26
+    - 30
+    - 35
+    - 37
+  color_scheme: standard_color_scheme
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+  native_filter_configuration:
+  - id: NATIVE_FILTER-OFSHv_o7V
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Select Site
+    filterType: filter_select
+    targets:
+    - column:
+        name: site
+      datasetUuid: 14f50bc2-4581-4303-ac1d-23c0dc325435
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope: []
+    tabsInScope: []
+  - id: NATIVE_FILTER-oLCXTkP3N
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Select Family
+    filterType: filter_select
+    targets:
+    - column:
+        name: family
+      datasetUuid: 14f50bc2-4581-4303-ac1d-23c0dc325435
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-OFSHv_o7V
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope: []
+    tabsInScope: []
+  - id: NATIVE_FILTER-sPYSIoJVG
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Select Device
+    filterType: filter_select
+    targets:
+    - column:
+        name: hostname
+      datasetUuid: 14f50bc2-4581-4303-ac1d-23c0dc325435
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-oLCXTkP3N
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 49
+    - 50
+    - 51
+    - 52
+    tabsInScope: []
+  shared_label_colors:
+    Off Business Hours: '#fbab18'
+    Business Hours: '#0d274d'
+    Energy Consumption (kWh): '#fbab18'
+    Daily Energy Consumption (kWh): '#fbab18'
+    Daily CO2eq Emissions (kg CO2eq): '#0d274d'
+  color_scheme_domain:
+  - '#fbab18'
+  - '#0d274d'
+  - '#00bceb'
+  - '#6abf4b'
+  - '#e2231a'
+  - '#eed202'
+  - '#00bceb'
+  - '#495057'
+  - '#ced4da'
+version: 1.0.0

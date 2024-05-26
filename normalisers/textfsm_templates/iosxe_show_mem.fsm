@@ -1,0 +1,8 @@
+Value slot (\S+)
+Value status (\S+)
+Value mem_total (\d+.?\d*)
+Value mem_used (\d+.?\d*)
+Value mem_free (\d+.?\d*)
+
+Start
+  ^\s*${slot}\s*${status}\s*${mem_total}\s*${mem_used}\s*\(\d+\%\)\s*${mem_free}\s*\(\d+\%\)\s* -> Next.Record

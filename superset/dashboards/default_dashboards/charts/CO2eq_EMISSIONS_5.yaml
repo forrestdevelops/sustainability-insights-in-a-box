@@ -1,0 +1,43 @@
+slice_name: CO2eq EMISSIONS
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 2__table
+  viz_type: big_number_total
+  slice_id: 38
+  metric:
+    expressionType: SQL
+    sqlExpression: sum(co2_intensity * power_in)/10000000
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: 24HR:CO2eq EMISSIONS
+    optionName: metric_3s08pwcx14a_us4aolmk70f
+  adhoc_filters:
+  - clause: WHERE
+    comparator: null
+    datasourceWarning: false
+    expressionType: SQL
+    filterOptionName: filter_fihlu47ob1k_tfcxwgu39eg
+    isExtra: false
+    isNew: false
+    operator: TEMPORAL_RANGE
+    sqlExpression: bucket >= CURRENT_TIMESTAMP - INTERVAL '24 HOUR'
+    subject: bucket
+  subheader: Kg CO2eq
+  header_font_size: 0.4
+  subheader_font_size: 0.15
+  y_axis_format: SMART_NUMBER
+  time_format: smart_date
+  extra_form_data: {}
+  dashboards:
+  - 2
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: 7f073bc3-deef-472b-8382-f3a90a550681
+version: 1.0.0
+dataset_uuid: b63486cc-73f0-4f2d-ae0f-e9d29dbd9bfd

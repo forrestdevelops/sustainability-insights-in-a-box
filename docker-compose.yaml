@@ -1,0 +1,189 @@
+# Copyright 2024 Cisco Systems, Inc. and its affiliates
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+###
+# Docker compose for SUSi Collector Tooling
+#
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.0
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      KAFKA_OPTS: "-Dzookeeper.4lw.commands.whitelist=*"
+    healthcheck:
+      test: echo ruok | nc -w1 localhost 2181
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+      start_interval: 5s
+    restart: unless-stopped
+
+  broker:
+    image: confluentinc/cp-kafka:7.3.0
+    hostname: broker
+    container_name: broker
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    ports:
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092,PLAINTEXT_HOST://host.docker.internal:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    restart: unless-stopped
+
+  broker-init:
+    image: confluentinc/cp-kafka:7.3.0
+    hostname: broker-init
+    container_name: broker-init
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    command:
+      - /bin/bash
+      - -c
+      - |
+        kafka-topics --bootstrap-server broker:9092 --if-not-exists --create --topic ssh_schedules --partitions 2 && \
+        kafka-topics --bootstrap-server broker:9092 --if-not-exists --create --topic collections --partitions 2
+        exit 0
+    restart: on-failure:3
+
+  database:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.database
+      args:
+      - --no-cache
+    hostname: database
+    container_name: database
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    ports:
+      - "${DBPORT}:${DBPORT}"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      DBUSER: ${DBUSER}
+      DBPASS: ${DBPASS}
+      DBNAME: ${DBNAME}
+      SCHEMA: metrics
+    healthcheck:
+      test: pg_isready -U${DBUSER} -d${DBNAME}
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+      start_interval: 5s
+    restart: unless-stopped
+
+  collector:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.ssh_collector
+      args:
+      - --no-cache
+    hostname: collector
+    container_name: collector
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+      broker-init:
+        condition: service_completed_successfully
+      database:
+        condition: service_healthy
+    command: bash -c "sleep 10 && python ssh_collector.py"
+    environment:
+      BOOTSTRAP_SERVERS: broker:9092
+      SCHEDULES_TOPIC: ssh_schedules
+      COLLECTIONS_TOPIC: collections
+    restart: unless-stopped
+
+  processor:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.processor
+      args:
+      - --no-cache
+    hostname: processor
+    container_name: processor
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+      broker-init:
+        condition: service_completed_successfully
+      database:
+        condition: service_healthy
+    command: bash -c "sleep 10 && python processor.py"
+    environment:
+      BOOTSTRAP_SERVERS: broker:9092
+      COLLECTIONS_TOPIC: collections
+      DBHOST: database
+      DBUSER: ${DBUSER}
+      DBPASS: ${DBPASS}
+      DBPORT: ${DBPORT}
+      DBNAME: ${DBNAME}
+      ENERGYMAP_KEY: ADDME
+    restart: unless-stopped
+
+  superset:
+    build:
+      context: ./superset
+      dockerfile: ../docker/Dockerfile.superset
+      args:
+      - --no-cache
+    container_name: superset
+    environment:
+      - ADMIN_USERNAME=${SUPERSET_ADMIN_USERNAME}
+      - ADMIN_EMAIL=${SUPERSET_ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${SUPERSET_ADMIN_PASSWORD}
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY}
+      - DBUSER=${DBUSER}
+      - DBPASS=${DBPASS}
+      - DBNAME=${DBNAME}
+      - DBPORT=${DBPORT}
+    ports:
+      - '8088:8088'
+    depends_on:
+      database:
+        condition: service_healthy
+  scheduler:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.scheduler
+      args:
+      - --no-cache
+    hostname: scheduler
+    container_name: scheduler
+    depends_on:
+      - collector
+    command: bash -c "sleep 10 && python scheduler.py"
+    environment:
+      BOOTSTRAP_SERVERS: broker:9092
+      REPORTS_TOPIC: reports
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        target: /susit/scheduler/config.yaml
+        source: ./config.yaml

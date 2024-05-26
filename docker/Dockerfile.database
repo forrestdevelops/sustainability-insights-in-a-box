@@ -1,0 +1,6 @@
+###
+# Dockerfile for SUSi Collector Tooling
+#
+
+FROM timescale/timescaledb:latest-pg15
+ADD dbscripts/dbcreate.sh /docker-entrypoint-initdb.d/

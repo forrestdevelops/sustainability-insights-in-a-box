@@ -1,0 +1,13 @@
+database_name: susi
+sqlalchemy_uri: postgresql+psycopg2://REPLACE_USER_NAME:REPLACE_USER_PWD@database:REPLACE_DB_PORT/REPLACE_DB_NAME
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  allows_virtual_table_explore: true
+uuid: bd98a864-83a0-4ef5-afdd-c30e022c6fa3
+version: 1.0.0

@@ -1,0 +1,5 @@
+Value CPU_1min (\d+.?\d*)
+Value CPU_5min (\d+.?\d*)
+				
+Start
+  ^\s*CPU\sutilization\sfor\sfive\sseconds:\s?\S+\s?one\sminute:\s?${CPU_1min}\%;\sfive\sminutes:\s?${CPU_5min}\% -> Next.Record

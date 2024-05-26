@@ -1,0 +1,27 @@
+###
+# Dockerfile for SUSi Collector Tooling
+#
+
+FROM python:3.11-slim
+
+# Upgrade packages and install dependencies
+RUN apt update -y \
+    && apt upgrade -y \
+    && apt install -y ssh \
+    && pip install --upgrade pip
+
+# Create non-root user with /susit as home directory
+RUN adduser --quiet --system --group --shell /usr/bin/bash --home /susit susit
+USER susit
+WORKDIR /susit/processor
+
+# Copy requirements.txt separately to leverage docker layer caching and avoid rerunning pip every time
+COPY --chown=susit ./processor/requirements.txt /susit/processor/requirements.txt
+RUN pip install --no-warn-script-location -r requirements.txt
+
+# Copy sources and libraries
+COPY --chown=susit ./processor /susit/processor
+COPY --chown=susit ../utils /susit/processor/utils
+
+# Run as non-root user
+CMD [ "python", "processor.py" ]

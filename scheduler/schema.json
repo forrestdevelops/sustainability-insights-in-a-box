@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "properties": {
+    "loglevel": {
+      "type": "object",
+      "properties": {
+        "console": {
+          "type": "string",
+          "enum": [
+            "OFF",
+            "ERROR",
+            "INFO",
+            "DEBUG"
+          ]
+        }
+      },
+      "required": [
+        "console"
+      ],
+      "additionalProperties": false
+    },
+    "sites": {
+      "type": "object",
+      "patternProperties": {
+        "[A-Za-z0-9_-]+" :{
+          "type": "object",
+          "properties" : {
+            "Latitude" : {
+              "type": "string",
+              "pattern": "[-]?[0-9]+.[0-9]+"
+            },
+            "Longitude" : {
+              "type": "string",
+              "pattern": "[-]?[0-9]+.[0-9]+"
+            },
+            "Timezone" : {
+              "type": "string"
+            },
+            "avg_co2_intensity": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 800
+            }
+          },
+          "required": [
+            "Latitude",
+            "Longitude",
+            "Timezone"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "devices": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_\\-\\./]*$": {
+          "type": "object",
+          "properties": {
+            "site": {
+              "type": "string",
+              "pattern": "[A-Za-z0-9_-]+"
+            },
+            "family": {
+              "type": "string",
+              "enum": [
+                "ASR1k",
+                "Cat9300"
+              ]
+            },
+            "os_type": {
+              "type": "string",
+              "enum": [
+                "iosxe"
+              ]
+            },
+            "os_version": {
+              "type": "string"
+            },
+            "connection": {
+              "type": "string",
+              "enum": [
+                "ssh"
+              ]
+            },
+            "address": {
+              "type": "string",
+              "format": "ipv4"
+            },
+            "port": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "ssh_options": {
+              "type": "string"
+            },
+            "timeout": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "username": {
+              "type": "string",
+              "minLength": 1
+            },
+            "password": {
+              "minLength": 1
+            },
+            "key": {
+              "type": "string",
+              "minLength": 32
+            },
+            "collection": {
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                },
+                "interval": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "enabled",
+                "interval"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "site",
+            "connection",
+            "timeout",
+            "collection",
+            "family",
+            "os_type",
+            "address",
+            "port",
+            "username",
+            "password"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "loglevel",
+    "sites",
+    "devices"
+  ],
+  "additionalProperties": false
+}

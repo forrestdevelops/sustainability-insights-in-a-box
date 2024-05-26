@@ -1,0 +1,39 @@
+slice_name: TRAFFIC EFFICIENCY
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 2__table
+  viz_type: big_number_total
+  slice_id: 17
+  metric:
+    aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: true
+    label: Traffic Efficiency
+    optionName: metric_tkda9rfj1pc_2g2n98qnbhi
+    sqlExpression: AVG(traffic_efficiency)/1000
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: bucket
+  subheader: kW/Gbps
+  header_font_size: 0.4
+  subheader_font_size: 0.15
+  y_axis_format: ',d'
+  time_format: smart_date
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 3
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: 2939146b-ee97-4541-a606-33114b40164d
+version: 1.0.0
+dataset_uuid: b63486cc-73f0-4f2d-ae0f-e9d29dbd9bfd

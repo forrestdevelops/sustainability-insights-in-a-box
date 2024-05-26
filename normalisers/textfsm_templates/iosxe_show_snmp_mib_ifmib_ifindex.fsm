@@ -1,0 +1,6 @@
+Value IFNAME (\S+)
+Value IFINDEX (\d+)
+				
+Start
+  ^\s*${IFNAME}:\s*Ifindex\s*=\s*${IFINDEX} -> Record
+

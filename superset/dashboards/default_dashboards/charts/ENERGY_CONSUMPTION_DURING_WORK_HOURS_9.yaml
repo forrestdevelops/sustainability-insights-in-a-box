@@ -1,0 +1,56 @@
+slice_name: ENERGY CONSUMPTION DURING WORK HOURS
+description: null
+certified_by: null
+certification_details: null
+viz_type: pie
+params:
+  datasource: 2__table
+  viz_type: pie
+  slice_id: 45
+  groupby:
+  - expressionType: SQL
+    label: Hours
+    sqlExpression: CASE WHEN bucket::time between '09:00:00' and '18:00:00' THEN 'Business
+      Hours' ELSE 'Off Business Hours' END
+  metric:
+    aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: false
+    label: SUM(power_in)
+    optionName: metric_ahjpd3g67li_7tjekyawsvt
+    sqlExpression: SUM(power_in)
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: bucket
+  row_limit: 10000
+  sort_by_metric: true
+  color_scheme: standard_color_scheme
+  show_labels_threshold: 5
+  show_legend: true
+  legendType: scroll
+  legendOrientation: bottom
+  legendMargin: 0
+  label_type: key
+  number_format: SMART_NUMBER
+  date_format: smart_date
+  show_labels: false
+  labels_outside: true
+  label_line: false
+  show_total: false
+  outerRadius: 58
+  donut: true
+  innerRadius: 30
+  extra_form_data: {}
+  dashboards:
+  - 6
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: 35a5b771-3c68-4412-bb1d-3def9c49739e
+version: 1.0.0
+dataset_uuid: b63486cc-73f0-4f2d-ae0f-e9d29dbd9bfd

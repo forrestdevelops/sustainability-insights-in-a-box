@@ -1,0 +1,9 @@
+Value SLOT (\S+)
+Value SENSOR (\S+|\S+\s\S+|\S+\s\S+\s\S+|\S+\s\S+\s\S+\s\S+)
+Value STATE (\S+|\S+\s\S+|\S+\s\S+\s\S+|\S+\s\S+\s\S+\s\S+)
+Value READING ([-+]?\d*\.\d+|\d+)
+Value UNITS (\S+|\S+\s\S+|\S+\s\S+\s\S+)
+
+Start
+  ^\s*${SLOT}\s{2,}${SENSOR}\s{2,}${STATE}\s{2,}${READING}\s*${UNITS} -> Record
+
