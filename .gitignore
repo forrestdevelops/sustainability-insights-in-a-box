@@ -7,5 +7,4 @@ dist
 **/__pycache__/**
 .log
 tests/cases
-.markdownlint.json
-.github
+
