@@ -19,3 +19,23 @@ Sustainability Insights microservices are preconfigured to with required values.
 
 - Database:
   Solution uses a Postgres/Timescale database to store collected and calculated metrics. Set `DBUSER` and `DBPASS` environment variables to use any custom values. Do remember to apply exact same values for `processor` and `superset` services.
+
+- Superset MS:
+  By default, the formatting specifications for various types of data, such as numbers, dates, times, and currency symbols, are set to European style. To adjust these formatting specifications to adhere to a different style, modify the properties in the 'superset_config.py' file under the name 'D3_FORMAT'. 
+  For example, for US style:
+  ```
+  D3_FORMAT = {
+    "decimal": ".",
+    "thousands": ",",
+    "grouping": [3],
+    "currency": ["£", ""],
+    "dateTime": "%a %e %b %X %Y",
+    "date": "%d/%m/%Y",
+    "time": "%H:%M:%S",
+    "periods": ["AM", "PM"],
+    "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    }
+  ```
