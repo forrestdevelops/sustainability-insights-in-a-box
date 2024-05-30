@@ -16,7 +16,6 @@ If using podman, update the build and running scipts to use `podman`, `podman-co
 - [Configure device inventory and collection](./docs/device-configuration.md)
 - For Linux users: run `$ chmod 666 config.yaml` as read-write permission is required
 - [Configure micro services](./docs/service-configuration.md)
-- For Windows users: Edit the shell environment substitues in the `docker-compose.yaml` file. Refer to the `.env` file for default values
 - For Windows users: Change the EOL Sequence from CRLF to LF for the following files:
   1. `dbscripts/dbcreate.sh`
   2. `superset/superset-init.sh`
