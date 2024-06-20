@@ -41,11 +41,13 @@ devices:
     address: 10.10.0.1
     port: 22
     username: admin
-    password: password-encrypted-on-first-run
+    password: 
+      gAAAAABmcZjN3PwG3-YSGBiTkKUC0oB3SP_Nkygbs3pstwTrRoc1QlwB9FYtmhQzB8_yWGv-qsencf7DkxdlFw-lQuAa8LDpTbmne0pkQfqP-Rbld8o_o7Q=
     timeout: 30
     collection:
       enabled: true
       interval: 10
+    key: dJhKzotcZ_CKUfulf8OzRAAX-bubEVJc2AFEokeNXpc=
   C9300-B:
     site: campus
     family: Cat9300
@@ -55,8 +57,10 @@ devices:
     address: 10.20.0.1
     port: 22
     username: admin
-    password: another-password-encrypted-on-first-run
+    password: 
+      gAAAAABmcZjORspxcvMwYLjUflEjnJ_zD2xjmaDbwMrc_Wq_lvrHXqZ4Ak-jBoIEH2ig1tpF1K_Ab4wREHfW6JzUYDKuSAVj-NxptrrVDFVDUSSojfBsZVo5ED2qd-9j8ZGpMI5Xtj7C
     timeout: 30
     collection:
       enabled: true
       interval: 10
+    key: nkGJTyGt-7f3h41scQKWDlIZuXp2fIf47KKbEdq7pkY=
